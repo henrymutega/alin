@@ -1,0 +1,1393 @@
+/* =========================================================
+   2. SHARED WEBSITE ELEMENTS
+========================================================= */
+
+section {
+  padding: 80px 0;
+  overflow: clip;
+}
+
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 80px 0;
+  scroll-margin-top: 90px;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--heading-color);
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  color: var(--default-color);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   3. BUTTONS
+========================================================= */
+
+.alin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 23px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.alin-btn-primary {
+  color: #ffffff !important;
+  background: var(--alin-orange);
+  border: 1px solid var(--alin-orange);
+  box-shadow: 0 5px 15px rgba(245, 130, 32, 0.18);
+}
+
+.alin-btn-primary:hover {
+  color: #ffffff !important;
+  background: var(--alin-orange-dark);
+  border-color: var(--alin-orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(245, 130, 32, 0.25);
+}
+
+.alin-btn-outline {
+  color: var(--alin-navy);
+  background: transparent;
+  border: 1px solid rgba(16, 29, 53, 0.2);
+}
+
+.alin-btn-outline:hover {
+  color: var(--alin-orange);
+  border-color: var(--alin-orange);
+  transform: translateY(-2px);
+}
+
+.btn-get-started {
+  color: #ffffff !important;
+  background: var(--alin-orange);
+  border: 1px solid var(--alin-orange);
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-get-started:hover {
+  background: var(--alin-orange-dark);
+  border-color: var(--alin-orange-dark);
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   4. ALINPAY NAVIGATION
+========================================================= */
+
+.alin-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(16, 29, 53, 0.07);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alin-navbar:hover {
+  box-shadow: 0 8px 30px rgba(16, 29, 53, 0.07);
+}
+
+.alin-navbar-inner {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Logo */
+
+.alin-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.alin-logo img {
+  display: block;
+  width: auto;
+  height: 100px;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+/* Desktop navigation */
+
+.alin-desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 100%;
+  flex: 1;
+}
+
+.alin-nav-group {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.alin-nav-trigger,
+.alin-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 100%;
+  padding: 0 13px;
+  border: none;
+  background: transparent;
+  color: #26364f;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.alin-nav-trigger::after,
+.alin-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 22px;
+  height: 2px;
+  border-radius: 5px;
+  background: var(--alin-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.alin-nav-trigger:hover,
+.alin-nav-link:hover,
+.alin-nav-group.is-open > .alin-nav-trigger {
+  color: var(--alin-orange);
+}
+
+.alin-nav-trigger:hover::after,
+.alin-nav-link:hover::after,
+.alin-nav-group.is-open > .alin-nav-trigger::after {
+  transform: scaleX(1);
+}
+
+.alin-chevron {
+  transition: transform 0.25s ease;
+}
+
+.alin-nav-group.is-open .alin-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panels */
+
+.alin-dropdown {
+  position: absolute;
+  top: calc(100% - 8px);
+  left: 50%;
+  width: 510px;
+  padding-top: 17px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+}
+
+.alin-nav-group:hover .alin-dropdown,
+.alin-nav-group:focus-within .alin-dropdown,
+.alin-nav-group.is-open .alin-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.alin-dropdown-content {
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 29, 53, 0.08);
+  border-radius: 16px;
+  box-shadow: var(--alin-shadow-lg);
+}
+
+.alin-dropdown-heading {
+  padding: 0 3px 18px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--alin-border);
+}
+
+.alin-dropdown-heading > span {
+  color: var(--alin-orange);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.alin-dropdown-heading p {
+  margin: 7px 0 0;
+  color: #68758a;
+  font-size: 13px;
+}
+
+.alin-dropdown-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+.alin-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 10px;
+  border-radius: 10px;
+  color: var(--alin-navy);
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.alin-dropdown-item:hover {
+  background: #fff6ee;
+  transform: translateX(4px);
+}
+
+.alin-dropdown-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--alin-orange);
+  background: var(--alin-orange-light);
+  border-radius: 11px;
+  transition: all 0.2s ease;
+}
+
+.alin-dropdown-item:hover .alin-dropdown-icon {
+  color: #ffffff;
+  background: var(--alin-orange);
+}
+
+.alin-dropdown-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.alin-dropdown-text strong {
+  color: var(--alin-navy);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.alin-dropdown-text small {
+  color: #788398;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.alin-dropdown-arrow {
+  color: #aab3c0;
+  transition: all 0.2s ease;
+}
+
+.alin-dropdown-item:hover .alin-dropdown-arrow {
+  color: var(--alin-orange);
+  transform: translate(2px, -2px);
+}
+
+.alin-dropdown-resources {
+  width: 390px;
+}
+
+/* Desktop actions */
+
+.alin-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.alin-nav-contact {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px;
+  color: #26364f;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.alin-nav-contact::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 3px;
+  height: 2px;
+  border-radius: 5px;
+  background: var(--alin-orange);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.alin-nav-contact:hover {
+  color: var(--alin-orange);
+}
+
+.alin-nav-contact:hover::after {
+  transform: scaleX(1);
+}
+
+/* Desktop demo button */
+
+.alin-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 20px;
+  border: 1px solid var(--alin-orange);
+  border-radius: 8px;
+  background: var(--alin-orange);
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px rgba(245, 130, 32, 0.18);
+  transition: all 0.25s ease;
+}
+
+.alin-nav-cta:hover {
+  background: var(--alin-orange-dark);
+  border-color: var(--alin-orange-dark);
+  color: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(245, 130, 32, 0.3);
+  transform: translateY(-2px);
+}
+
+.alin-nav-cta svg:first-child {
+  color: #ffffff;
+  transition: transform 0.25s ease;
+}
+
+.alin-nav-cta:hover svg:first-child {
+  transform: scale(1.12);
+}
+
+/* Mobile demo button in header */
+
+.alin-mobile-header-cta {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 13px;
+  background: var(--alin-orange);
+  color: #ffffff !important;
+  border: 1px solid var(--alin-orange);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(245, 130, 32, 0.18);
+  transition: all 0.25s ease;
+}
+
+.alin-mobile-header-cta:hover {
+  background: var(--alin-orange-dark);
+  border-color: var(--alin-orange-dark);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Mobile toggle */
+
+.alin-mobile-toggle {
+  display: none;
+  width: 43px;
+  height: 43px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e8ebf0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: var(--alin-navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.alin-mobile-toggle:hover {
+  color: var(--alin-orange);
+  border-color: var(--alin-orange);
+}
+
+/* Mobile navigation */
+
+.alin-mobile-menu {
+  display: none;
+}
+
+.alin-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 20px 22px;
+}
+
+.alin-mobile-group {
+  border-bottom: 1px solid var(--alin-border);
+}
+
+.alin-mobile-trigger,
+.alin-mobile-link {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background: transparent;
+  color: var(--alin-navy);
+  font-size: 14px;
+  font-weight: 650;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.alin-mobile-trigger:hover,
+.alin-mobile-link:hover {
+  color: var(--alin-orange);
+}
+
+.alin-mobile-trigger svg {
+  transition: transform 0.25s ease;
+}
+
+.alin-mobile-trigger .rotate-chevron {
+  transform: rotate(180deg);
+}
+
+.alin-mobile-submenu {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease;
+}
+
+.alin-mobile-submenu.is-expanded {
+  max-height: 260px;
+  opacity: 1;
+}
+
+.alin-mobile-subitem {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 12px;
+  color: #66738a;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 7px;
+  transition: all 0.2s ease;
+}
+
+.alin-mobile-subitem svg {
+  color: var(--alin-orange);
+}
+
+.alin-mobile-subitem:hover {
+  color: var(--alin-navy);
+  background: #fff6ee;
+}
+
+
+/* =========================================================
+   5. HERO SECTION
+========================================================= */
+
+.hero {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 130px 0 80px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(245, 130, 32, 0.09),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+}
+
+.hero h1 {
+  color: var(--alin-navy);
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+.hero p {
+  color: var(--alin-text);
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero .btn-get-started {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hero .hero-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   6. ABOUT SECTION
+========================================================= */
+
+.about {
+  background: #ffffff;
+}
+
+.about .content h3 {
+  color: var(--alin-orange);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.about .content h2 {
+  color: var(--alin-navy);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.about .content p {
+  color: var(--alin-text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.about .content ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: var(--alin-text);
+}
+
+.about .content ul li i {
+  color: var(--alin-orange);
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   7. FEATURES SECTION
+========================================================= */
+
+.features {
+  background: #f8faff;
+}
+
+.alin-feature-card {
+  height: 100%;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 29, 53, 0.06);
+  border-radius: var(--alin-radius-lg);
+  box-shadow: var(--alin-shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.alin-feature-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--alin-shadow-md);
+}
+
+.alin-feature-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: var(--alin-orange);
+  background: var(--alin-orange-light);
+  border-radius: 15px;
+  font-size: 26px;
+}
+
+.alin-feature-card h3 {
+  color: var(--alin-navy);
+  font-size: 19px;
+  font-weight: 750;
+  margin-bottom: 12px;
+}
+
+.alin-feature-card p {
+  color: var(--alin-text);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   8. SOLUTIONS SECTION
+========================================================= */
+
+.alin-solutions {
+  background: #ffffff;
+}
+
+.alin-solution-card {
+  height: 100%;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid var(--alin-border);
+  border-radius: var(--alin-radius-lg);
+  transition: all 0.3s ease;
+}
+
+.alin-solution-card:hover {
+  border-color: rgba(245, 130, 32, 0.35);
+  box-shadow: var(--alin-shadow-md);
+  transform: translateY(-5px);
+}
+
+.alin-solution-card h3 {
+  color: var(--alin-navy);
+  font-size: 19px;
+  font-weight: 750;
+  margin-bottom: 12px;
+}
+
+.alin-solution-card p {
+  color: var(--alin-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   9. HOW IT WORKS
+========================================================= */
+
+.alin-how-it-works {
+  background: #f8faff;
+}
+
+.alin-step-card {
+  height: 100%;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid var(--alin-border);
+  border-radius: var(--alin-radius-lg);
+  box-shadow: var(--alin-shadow-sm);
+}
+
+.alin-step-number {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: var(--alin-orange-light);
+  color: var(--alin-orange);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.alin-step-card h3 {
+  color: var(--alin-navy);
+  font-size: 18px;
+  font-weight: 750;
+  margin-bottom: 12px;
+}
+
+.alin-step-card p {
+  color: var(--alin-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   10. DASHBOARD / PRODUCT PREVIEW
+========================================================= */
+
+.alin-dashboard {
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 29, 53, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 25px 65px rgba(16, 29, 53, 0.12);
+}
+
+.alin-dashboard-panel {
+  padding: 22px;
+  background: #f8faff;
+  border: 1px solid #edf0f4;
+  border-radius: 14px;
+}
+
+.alin-dashboard-label {
+  color: #788398;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.alin-dashboard-amount {
+  color: var(--alin-navy);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.alin-mini-card {
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid var(--alin-border);
+  border-radius: 12px;
+  box-shadow: var(--alin-shadow-sm);
+}
+
+
+/* =========================================================
+   11. CALL TO ACTION
+========================================================= */
+
+.alin-cta {
+  position: relative;
+  padding: 75px 35px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(245, 130, 32, 0.22),
+      transparent 35%
+    ),
+    var(--alin-navy);
+  border-radius: 22px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.alin-cta h2 {
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.alin-cta p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 0 auto 25px;
+}
+
+
+/* =========================================================
+   12. FOOTER
+========================================================= */
+.alin-footer {
+  position: relative;
+  width: 100%;
+  color: #ffffff;
+  background: var(--alin-navy);
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.alin-footer > .alin-container {
+  padding-top: 65px;
+  padding-bottom: 0;
+}
+.alin-footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+.alin-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 0;
+}
+
+.alin-footer-logo-image {
+  display: block;
+  width: auto;
+  height: 120px;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.alin-footer-demo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.alin-footer-demo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 18px;
+  border: 1px solid var(--alin-orange);
+  border-radius: 7px;
+  background: var(--alin-orange);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.alin-footer-demo:hover {
+  background: var(--alin-orange-dark);
+  border-color: var(--alin-orange-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.alin-footer-demo svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.alin-footer-demo:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.alin-footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.alin-footer-email svg {
+  flex-shrink: 0;
+  color: var(--alin-orange);
+}
+
+.alin-footer-email:hover {
+  color: var(--alin-orange);
+}
+
+.alin-footer-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.alin-footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.alin-footer-social-link:hover {
+  color: #ffffff;
+  background: var(--alin-orange);
+  border-color: var(--alin-orange);
+  transform: translateY(-3px);
+}
+
+.alin-footer-social-link svg {
+  display: block;
+  flex-shrink: 0;
+}
+.alin-footer-heading {
+  position: relative;
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.alin-footer-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.alin-footer-list li {
+  padding: 0;
+  margin: 0 0 13px;
+  line-height: 1.5;
+}
+
+.alin-footer-list a {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 13px;
+  line-height: 1.6;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.alin-footer-list a:hover {
+  color: var(--alin-orange);
+  transform: translateX(3px);
+}
+
+.alin-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.alin-footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 991px) {
+  .alin-footer > .alin-container {
+    padding-top: 55px;
+  }
+
+  .alin-footer-brand {
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .alin-footer-bottom {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 575px) {
+  .alin-footer > .alin-container {
+    padding-top: 45px;
+  }
+
+  .alin-footer-brand {
+    gap: 17px;
+  }
+
+  .alin-footer-logo-image {
+    height: 120px;
+    max-width: 140px;
+  }
+
+  .alin-footer-demo {
+    padding: 12px 14px;
+    font-size: 18px;
+  }
+
+  .alin-footer-email {
+    font-size: 18px;
+  }
+
+  .alin-footer-socials {
+    gap: 12px;
+  }
+
+  .alin-footer-social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .alin-footer-heading {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  .alin-footer-list li {
+    margin-bottom: 11px;
+  }
+
+  .alin-footer-list a {
+    font-size: 12px;
+  }
+
+  .alin-footer-bottom {
+    margin-top: 25px;
+    padding: 19px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .alin-footer-logo-image {
+    height: 120px;
+    max-width: 125px;
+  }
+
+  .alin-footer-socials {
+    gap: 7px;
+  }
+
+  .alin-footer-social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .alin-footer-heading {
+    font-size: 13px;
+  }
+
+  .alin-footer-list a {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   13. BACK TO TOP
+========================================================= */
+
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9998;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--alin-orange);
+  color: #ffffff;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.scroll-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  background: var(--alin-orange-dark);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   14. RESPONSIVE NAVIGATION
+========================================================= */
+
+@media (max-width: 1199px) {
+  .alin-navbar-inner {
+    gap: 15px;
+  }
+
+  .alin-nav-trigger,
+  .alin-nav-link {
+    padding-left: 9px;
+    padding-right: 9px;
+    font-size: 13px;
+  }
+
+  .alin-nav-cta {
+    padding: 11px 14px;
+  }
+}
+
+@media (max-width: 991px) {
+  .alin-navbar-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    height: 76px;
+    gap: 8px;
+  }
+
+  .alin-logo {
+    justify-self: start;
+    min-width: 0;
+  }
+
+  .alin-logo img {
+    height: 80px;
+  }
+
+  .alin-mobile-header-cta {
+    display: inline-flex;
+    justify-self: center;
+  }
+
+  .alin-mobile-toggle {
+    display: inline-flex;
+    justify-self: end;
+    flex-shrink: 0;
+  }
+
+  .alin-desktop-nav,
+  .alin-nav-actions {
+    display: none !important;
+  }
+
+  .alin-mobile-menu {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: #ffffff;
+    border-top: 1px solid transparent;
+    transition:
+      max-height 0.4s ease,
+      opacity 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .alin-mobile-menu.is-open {
+    max-height: 85vh;
+    overflow-y: auto;
+    opacity: 1;
+    border-top-color: var(--alin-border);
+    box-shadow: 0 15px 25px rgba(16, 29, 53, 0.08);
+  }
+}
+
+
+/* =========================================================
+   15. RESPONSIVE CONTENT
+========================================================= */
+
+@media (max-width: 991px) {
+  section,
+  .section {
+    padding: 65px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 125px 0 65px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .about .content h2 {
+    font-size: 29px;
+  }
+
+  .alin-cta {
+    padding: 55px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  section,
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-title {
+    padding-bottom: 35px;
+  }
+
+  .section-title h2 {
+    font-size: 27px;
+  }
+
+  .section-title p {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 115px 0 55px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+    letter-spacing: -0.8px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .about .content h2 {
+    font-size: 27px;
+  }
+
+  .alin-dashboard {
+    padding: 15px;
+  }
+
+  .alin-dashboard-amount {
+    font-size: 23px;
+  }
+
+  .alin-cta {
+    padding: 45px 20px;
+    border-radius: 15px;
+  }
+
+  .alin-cta h2 {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 380px) {
+  .alin-mobile-header-cta {
+    padding: 9px 8px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .alin-mobile-header-cta svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .alin-logo img {
+    height: 80px;
+    max-width: 105px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+
+/* =========================================================
+   16. ACCESSIBILITY AND REDUCED MOTION
+========================================================= */
+
+.alin-navbar a:focus-visible,
+.alin-navbar button:focus-visible,
+.alin-btn:focus-visible {
+  outline: 3px solid rgba(245, 130, 32, 0.45);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alin-navbar *,
+  .alin-navbar *::before,
+  .alin-navbar *::after,
+  .alin-feature-card,
+  .alin-solution-card {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
