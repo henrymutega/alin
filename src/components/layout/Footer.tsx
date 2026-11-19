@@ -65,7 +65,7 @@ const socialLinks = [
 ];
 
 const demoLink =
-  "https://wa.me/254703361658?text=Hello%20AlinPay%2C%20I%20would%20like%20to%20book%20a%20free%20demo.";
+  "https://wa.me/254711970432?text=Hello%20AlinPay%2C%20I%20would%20like%20to%20book%20a%20free%20demo.";
 
 export default function Footer() {
   return (

@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 const WHATSAPP_URL =
-  "https://wa.me/254703361658?text=Hello%20AlinPay%2C%20I%20would%20like%20to%20book%20a%20free%20demo.";
+  "https://wa.me/254711970432?text=Hello%20AlinPay%2C%20I%20would%20like%20to%20book%20a%20free%20demo.";
 
 const navigation = [
   {
