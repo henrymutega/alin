@@ -192,7 +192,11 @@ export default function FAQsPage() {
                   </div>
                   <div>
                     <strong>We're here to help</strong>
-                    <span>we are all ears...</span>
+                    <span>
+                        <a href={whatsappLink} target="_blank" rel="noreferrer" className="alin-faq-whatsapp-link">
+                            we are all ears.. <ArrowUpRight size={15} />
+                        </a>
+                    </span>
                   </div>
                 </div>
               </div>

@@ -3994,7 +3994,37 @@ section {
   color: var(--alin-navy, #101d35);
 }
 
-/* RESPONSIVE */
+/* FAQ floating card WhatsApp link */
+.alin-faq-floating-card span {
+  display: block;
+  margin-top: 5px;
+}
+
+.alin-faq-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--alin-orange);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.alin-faq-whatsapp-link:hover {
+  color: var(--alin-orange-dark);
+  text-decoration: none;
+}
+
+.alin-faq-whatsapp-link svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.alin-faq-whatsapp-link:hover svg {
+  transform: translate(2px, -2px);
+}
 
 @media (max-width: 991px) {
   .alin-faq-hero-grid {
