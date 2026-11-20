@@ -16,7 +16,7 @@ import {
   X,
 } from "lucide-react";
 
-const whatsappNumber = "254711234567";
+const whatsappNumber = "254711970432";
 
 const whatsappMessage =
   "Hello AlinPay team, I have a question and would like some assistance.";

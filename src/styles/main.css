@@ -4240,3 +4240,528 @@ section {
     min-width: 0;
   }
 }
+
+
+/* =========================================================
+   21. WHY ALIN PAGE
+========================================================= */
+
+.alin-why-page {
+  color: var(--alin-text, #465166);
+  overflow: hidden;
+}
+
+.alin-why-page section {
+  position: relative;
+}
+
+.alin-why-eyebrow {
+  display: inline-block;
+  color: var(--alin-orange);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* HERO */
+
+.alin-why-hero {
+  padding: 20px 0 20px;
+  background: #f8f9fc;
+}
+
+.alin-why-hero > .alin-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.alin-why-hero-content h1 {
+  color: var(--alin-navy);
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 0 0 25px;
+}
+
+.alin-why-hero-content h1 span,
+.alin-why-intro h2 span,
+.alin-why-audience-content h2 span,
+.alin-why-cta h2 span {
+  color: var(--alin-navy);
+}
+
+.alin-why-hero-content > p {
+  max-width: 510px;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.alin-why-hero-actions,
+.alin-why-cta-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.alin-why-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 7px;
+  background: var(--alin-orange);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.alin-why-primary-btn:hover {
+  background: var(--alin-orange-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.alin-why-secondary-btn-bm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 7px;
+  background: var(--alin-navy);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.alin-why-secondary-btn-bm:hover {
+  background: var(--alin-navy-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.alin-why-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--alin-navy);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.alin-why-secondary-btn:hover {
+  color: var(--alin-orange);
+}
+
+.alin-why-hero-image {
+  position: relative;
+  height: 450px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 55px rgba(16, 29, 53, 0.12);
+}
+
+.alin-why-hero-image > img,
+.alin-why-audience-image > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.alin-why-hero-image::after,
+.alin-why-audience-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 50%,
+    rgba(16, 29, 53, 0.48) 100%
+  );
+  pointer-events: none;
+}
+
+.alin-why-hero-note {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 19px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.alin-why-note-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff2e6;
+  color: var(--alin-orange);
+  border-radius: 9px;
+}
+
+.alin-why-hero-note strong,
+.alin-why-hero-note span {
+  display: block;
+}
+
+.alin-why-hero-note strong {
+  color: var(--alin-navy);
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.alin-why-hero-note div > span {
+  color: #788398;
+  font-size: 12px;
+}
+
+/* INTRODUCTION */
+
+.alin-why-intro {
+  padding: 90px 0 45px;
+  text-align: center;
+}
+
+.alin-why-intro h2 {
+  color: var(--alin-navy);
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+}
+
+.alin-why-intro p {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* AUDIENCE SECTIONS */
+
+.alin-why-audience {
+  padding: 85px 0;
+}
+
+.alin-why-audience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 85px;
+}
+
+.alin-why-business {
+  background: #f8f9fc;
+}
+
+.alin-why-audience-image {
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(16, 29, 53, 0.09);
+}
+
+.alin-why-audience-image img {
+  transition: transform 0.7s ease;
+}
+
+.alin-why-audience-image:hover img {
+  transform: scale(1.045);
+}
+
+.alin-why-image-label {
+  position: absolute;
+  z-index: 2;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.alin-why-image-label svg {
+  color: var(--alin-orange);
+  flex-shrink: 0;
+}
+
+.alin-why-number {
+  display: inline-block;
+  color: var(--alin-orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.alin-why-audience-content h2 {
+  color: var(--alin-navy);
+  font-size: clamp(36px, 4vw, 49px);
+  line-height: 1.13;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 0 0 18px;
+}
+
+.alin-why-punchline {
+  color: var(--alin-navy);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.alin-why-description {
+  font-size: 15px;
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+
+.alin-why-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+  display: grid;
+  gap: 13px;
+}
+
+.alin-why-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.alin-why-benefits li svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--alin-orange);
+}
+
+.alin-why-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--alin-orange);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.alin-why-text-link:hover {
+  color: var(--alin-navy);
+}
+
+/* CLOSING CTA */
+
+.alin-why-cta {
+  padding: 20px 0;
+  background: var(--alin-orange);
+  text-align: center;
+}
+
+.alin-why-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.alin-why-cta h2 {
+  color: #fff;
+  font-size: clamp(32px, 4vw, 47px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.alin-why-cta p {
+  max-width: 630px;
+  margin: 0 auto 28px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.alin-why-cta-actions {
+  justify-content: center;
+}
+
+.alin-why-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.alin-why-cta-link:hover {
+  color: var(--alin-navy);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+  .alin-why-hero {
+    padding: 75px 0;
+  }
+
+  .alin-why-hero > .alin-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .alin-why-hero-content {
+    max-width: 700px;
+  }
+
+  .alin-why-hero-image {
+    height: 400px;
+  }
+
+  .alin-why-audience {
+    padding: 70px 0;
+  }
+
+  .alin-why-audience-grid {
+    gap: 45px;
+  }
+
+  .alin-why-audience-image {
+    height: 370px;
+  }
+}
+
+@media (max-width: 767px) {
+  .alin-why-hero {
+    padding: 20px 0;
+  }
+
+  .alin-why-hero-content h1 {
+    font-size: 43px;
+    letter-spacing: -1.5px;
+  }
+
+  .alin-why-hero-content > p {
+    font-size: 15px;
+  }
+
+  .alin-why-hero-image {
+    height: 300px;
+    border-radius: 12px;
+  }
+
+  .alin-why-hero-note {
+    left: 13px;
+    bottom: 13px;
+    padding: 11px 13px;
+  }
+
+  .alin-why-intro {
+    padding: 65px 0 25px;
+  }
+
+  .alin-why-intro h2 {
+    font-size: 34px;
+  }
+
+  .alin-why-intro p {
+    font-size: 14px;
+  }
+
+  .alin-why-audience {
+    padding: 55px 0;
+  }
+
+  .alin-why-audience-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .alin-why-reverse .alin-why-audience-content {
+    order: 2;
+  }
+
+  .alin-why-reverse .alin-why-audience-image {
+    order: 1;
+  }
+
+  .alin-why-audience-image {
+    height: 290px;
+    border-radius: 12px;
+  }
+
+  .alin-why-audience-content h2 {
+    font-size: 37px;
+  }
+
+  .alin-why-punchline {
+    font-size: 16px;
+  }
+
+  .alin-why-description {
+    font-size: 14px;
+  }
+
+  .alin-why-benefits li {
+    font-size: 13px;
+  }
+
+  .alin-why-cta {
+    padding: 20px 0;
+  }
+
+  .alin-why-cta h2 {
+    font-size: 34px;
+  }
+
+  .alin-why-cta p {
+    font-size: 14px;
+  }
+
+  .alin-why-hero-actions {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .alin-why-hero-content h1 {
+    font-size: 37px;
+  }
+
+  .alin-why-primary-btn {
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+
+  .alin-why-audience-content h2 {
+    font-size: 33px;
+  }
+}

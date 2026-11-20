@@ -107,7 +107,7 @@ const resources = [
   {
     label: "How It Works",
     description: "Discover how AlinPay works.",
-    href: "/#how-it-works",
+    href: "/how-it-works",
     icon: Workflow,
   },
   {
@@ -243,7 +243,7 @@ export default function Navbar() {
 
           {/* Why Alin */}
           <Link
-            href="/#why-alin"
+            href="/why-alin"
             className="alin-nav-link"
             onClick={closeMenus}
           >
@@ -383,7 +383,7 @@ export default function Navbar() {
 
           {/* Why Alin */}
           <Link
-            href="/#why-alin"
+            href="/why-alin"
             className="alin-mobile-link"
             onClick={closeMenus}
           >
